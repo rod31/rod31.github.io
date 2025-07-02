@@ -2,120 +2,96 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rodrigo Aragao | Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #111;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    .container {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .section {
-      margin-bottom: 2.5rem;
-    }
-    h2 {
-      color: #222;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.5rem;
-    }
-    .project {
-      background: white;
-      border: 1px solid #ddd;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-    }
-    .project h3 {
-      margin-top: 0;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #111;
-      color: white;
-    }
-  </style>
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Rodrigo Aragao—Machine Learning, Neurotech & Data Science projects portfolio." />
+  <meta property="og:title" content="Rodrigo Aragao | Portfolio" />
+  <meta property="og:description" content="Computer Engineering grad building ML & neurotech tools. Check out my projects & résumé." />
+  <meta property="og:image" content="assets/img/og-image.png" />
+  <meta property="og:url" content="https://rod31.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <header>
-    <h1>Rodrigo Aragao</h1>
-    <p>Machine Learning · Neurotechnology · Data Science</p>
+    <div class="container header-inner">
+      <h1>Rodrigo Aragao</h1>
+      <p>Machine Learning · Neurotechnology · Data Science</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Technologies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌓</button>
+    </div>
   </header>
 
-  <div class="container">
-    <section class="section">
+  <main class="container">
+    <section id="about" class="section">
       <h2>About Me</h2>
-      <p>
-        I'm a Computer Engineering graduate with a minor in Neuroscience, passionate about building intelligent systems that connect data, behavior, and biology. I work across machine learning, signal processing, and UI-driven tools to solve real-world problems in neurotech and AI.
-      </p>
+      <p>I'm a Computer Engineering graduate with a minor in Neuroscience, passionate about building intelligent systems that connect data, behavior, and biology. I work across machine learning, signal processing, and UI-driven tools to solve real-world problems in neurotech and AI.</p>
     </section>
 
-    <section class="section">
+    <section id="projects" class="section projects">
       <h2>Projects</h2>
 
-      <div class="project">
+      <div class="project-card">
         <h3>Optogenetics Protocol GUI</h3>
         <p>Python GUI and Arduino system for designing and triggering real-time optogenetics LED protocols. Built for neuroscience research and customizable by experimental parameters like color, frequency, and duration.</p>
         <a href="https://github.com/rod31/optogenetics-gui" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="project">
+      <div class="project-card">
         <h3>Succession NLP – Sarcasm Detection</h3>
         <p>Fine-tuned BERT model to detect sarcasm in Succession character dialogue. Includes style-aware text generation and exploratory analysis of character speech patterns.</p>
         <a href="https://github.com/rod31/succession-nlp" target="_blank">View on GitHub →</a>
       </div>
 
-      <div class="project">
+      <div class="project-card">
         <h3>IMDB Sentiment Classifier</h3>
         <p>Compared multiple machine learning models and transformer architectures on the IMDB dataset to classify movie reviews by sentiment. Includes cross-validation and performance evaluation.</p>
-        <a href="https://github.com/rod31/imdb-sentiment-analysis" target="_blank">View on GitHub</a>
-      </div>
-      <div class="project">
-      <h3>EEG Reaction Time Prediction</h3>
-      <p>Built a Support Vector Machine (SVM) model to classify fast vs. slow reaction times using EEG signals. Processed brainwave data with MATLAB (EEGLAB), engineered alpha/theta band features, and automated a full ML pipeline with cross-validation and visualizations for decision boundaries and performance metrics.</p>
-      <a href="https://github.com/rod31/eeg-reaction-time" target="_blank">View on GitHub →</a>
+        <a href="https://github.com/rod31/imdb-sentiment-analysis" target="_blank">View on GitHub →</a>
       </div>
 
+      <div class="project-card">
+        <h3>EEG Reaction Time Prediction</h3>
+        <p>Built an SVM model to classify fast vs. slow reaction times using EEG signals. Processed brainwave data with MATLAB (EEGLAB), engineered alpha/theta band features, and automated a full ML pipeline with cross-validation and visualizations.</p>
+        <a href="https://github.com/rod31/eeg-reaction-time" target="_blank">View on GitHub →</a>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Resume</h2>
-      <p><a href="resume.pdf" target="_blank">Download PDF</a></p>
+    <section id="skills" class="section">
+      <h2>Technologies</h2>
+      <ul class="skills-list">
+        <li>Python</li>
+        <li>TensorFlow</li>
+        <li>MATLAB</li>
+        <li>C++</li>
+      </ul>
     </section>
 
-    <section class="section">
+    <section id="contact" class="section">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:rodrigo01.aragao@gmail.com">Rodrigo01.aragao@gmail.com</a></p>
+      <p>Email: <a href="mailto:rodrigo01.aragao@gmail.com">rodrigo01.aragao@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/rb-aragao" target="_blank">rb-aragao</a></p>
       <p>GitHub: <a href="https://github.com/rod31" target="_blank">rod31</a></p>
     </section>
-  </div>
+  </main>
 
   <footer>
     <p>&copy; 2025 Rodrigo Aragao</p>
   </footer>
+
+  <script>
+    // Dark mode toggle
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
