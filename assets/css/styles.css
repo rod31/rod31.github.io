@@ -1,0 +1,110 @@
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --header-bg: #111;
+  --header-text: #fff;
+  --card-bg: #fff;
+  --card-border: #ddd;
+  --link-color: #0066cc;
+  --skill-bg: #e0e0e0;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+body.dark {
+  --bg-color: #111;
+  --text-color: #f4f4f4;
+  --header-bg: #f4f4f4;
+  --header-text: #111;
+  --card-bg: #1e1e1e;
+  --card-border: #333;
+  --link-color: #1e90ff;
+}
+header {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  color: var(--header-text);
+  z-index: 1000;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+}
+nav a {
+  margin: 0 0.75rem;
+  color: var(--header-text);
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--header-text);
+}
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.section {
+  margin-bottom: 2.5rem;
+}
+h2 {
+  color: var(--text-color);
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.skills-list li {
+  background: var(--skill-bg);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--header-bg);
+  color: var(--header-text);
+}
