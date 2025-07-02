@@ -18,8 +18,10 @@
 <body>
   <header>
     <div class="container header-inner">
-      <h1>Rodrigo Aragao</h1>
-      <p>Machine Learning · Neurotechnology · Data Science</p>
+      <div class="brand">
+        <h1>Rodrigo Aragao</h1>
+        <p class="tagline">Machine Learning · Neurotechnology · Data Science</p>
+      </div>
       <nav>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -38,25 +40,22 @@
 
     <section id="projects" class="section projects">
       <h2>Projects</h2>
-
+      <!-- Project cards -->
       <div class="project-card">
         <h3>Optogenetics Protocol GUI</h3>
         <p>Python GUI and Arduino system for designing and triggering real-time optogenetics LED protocols. Built for neuroscience research and customizable by experimental parameters like color, frequency, and duration.</p>
         <a href="https://github.com/rod31/optogenetics-gui" target="_blank">View on GitHub →</a>
       </div>
-
       <div class="project-card">
         <h3>Succession NLP – Sarcasm Detection</h3>
         <p>Fine-tuned BERT model to detect sarcasm in Succession character dialogue. Includes style-aware text generation and exploratory analysis of character speech patterns.</p>
         <a href="https://github.com/rod31/succession-nlp" target="_blank">View on GitHub →</a>
       </div>
-
       <div class="project-card">
         <h3>IMDB Sentiment Classifier</h3>
         <p>Compared multiple machine learning models and transformer architectures on the IMDB dataset to classify movie reviews by sentiment. Includes cross-validation and performance evaluation.</p>
         <a href="https://github.com/rod31/imdb-sentiment-analysis" target="_blank">View on GitHub →</a>
       </div>
-
       <div class="project-card">
         <h3>EEG Reaction Time Prediction</h3>
         <p>Built an SVM model to classify fast vs. slow reaction times using EEG signals. Processed brainwave data with MATLAB (EEGLAB), engineered alpha/theta band features, and automated a full ML pipeline with cross-validation and visualizations.</p>
@@ -88,8 +87,7 @@
 
   <script>
     // Dark mode toggle
-    const toggle = document.getElementById('theme-toggle');
-    toggle.addEventListener('click', () => {
+    document.getElementById('theme-toggle').addEventListener('click', () => {
       document.body.classList.toggle('dark');
     });
   </script>
