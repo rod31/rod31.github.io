@@ -30,15 +30,12 @@ header {
   top: 0;
   background: var(--header-bg);
   color: var(--header-text);
-  z-index: 1000;
 }
 .header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   padding: 1rem 2rem;
-  gap: 1rem;
 }
 .brand-group {
   display: flex;
@@ -54,34 +51,13 @@ header {
   font-size: 0.9rem;
   color: var(--header-text);
 }
-.main-nav {
-  display: flex;
-  gap: 1.25rem;
-}
-.main-nav a {
-  color: var(--header-text);
-  font-weight: 500;
-  text-decoration: none;
-}
-.main-nav a:hover {
-  text-decoration: underline;
-}
-#theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: var(--header-text);
-}
 .container {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
 }
-.section {
-  margin-bottom: 2.5rem;
-}
 h2 {
+  margin-top: 2rem;
   color: var(--text-color);
   border-bottom: 2px solid #ddd;
   padding-bottom: 0.5rem;
