@@ -39,7 +39,7 @@ header {
 }
 .brand-group {
   display: flex;
-  flex-direction: column;
+  flex-direction: center;
 }
 .site-title {
   margin: 0;
@@ -107,4 +107,12 @@ footer {
   padding: 1rem;
   background: var(--header-bg);
   color: var(--header-text);
+}
+
+.profile-pic {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;  /* make it a circle */
+  object-fit: cover;   /* crop/scale nicely */
+  margin-right: 0.75rem; /* space between pic and your name */
 }
