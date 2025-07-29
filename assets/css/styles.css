@@ -116,3 +116,17 @@ footer {
   object-fit: cover;   /* crop/scale nicely */
   margin-right: 0.75rem; /* space between pic and your name */
 }
+.btn-resume {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #1e90ff;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.btn-resume:hover {
+  background-color: #0066cc;
+}
