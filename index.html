@@ -2,114 +2,780 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rodrigo Aragao | Portfolio</title>
-  <meta name="description" content="Rodrigo Aragao—Machine Learning, Neurotech & Data Science projects portfolio." />
-  <meta property="og:title" content="Rodrigo Aragao | Portfolio" />
-  <meta property="og:description" content="Computer Engineering grad building ML & neurotech tools. Check out my projects & résumé." />
-  <meta property="og:image" content="assets/img/og-image.png" />
-  <meta property="og:url" content="https://rod31.github.io/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Rodrigo Aragao</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f3ef;
+      --ink: #141210;
+      --mid: #6b6560;
+      --accent: #1a3a2a;
+      --accent-light: #e8f0eb;
+      --rule: #d9d4cc;
+      --tag-bg: #ece9e3;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    /* ─── LAYOUT ─── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(245, 243, 239, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .nav-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+      text-transform: lowercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      text-decoration: none;
+      text-transform: lowercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 140px 0 80px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--mid);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .hero-name-row {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.1s forwards;
+    }
+
+    .hero-portrait {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--rule);
+      box-shadow: 0 4px 18px rgba(20,18,16,0.13);
+      flex-shrink: 0;
+      align-self: center;
+    }
+
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .hero-name em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      max-width: 520px;
+      font-size: 1.1rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.2s forwards;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease 0.3s forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      text-decoration: none;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: #0f2419; }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--rule);
+    }
+    .btn-ghost:hover { border-color: var(--ink); }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 80px 0; border-bottom: 1px solid var(--rule); }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--mid);
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .about-text {
+      color: var(--mid);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .badge {
+      background: var(--tag-bg);
+      color: var(--ink);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.7rem;
+      border-radius: 2px;
+    }
+
+    .about-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .highlight-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.2rem;
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      transition: border-color 0.2s;
+    }
+
+    .highlight-item:hover { border-color: var(--accent); }
+
+    .highlight-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      width: 28px;
+      text-align: center;
+      padding-top: 1px;
+    }
+
+    .highlight-text {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.55;
+    }
+
+    /* ─── PROJECTS ─── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: #fff;
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .project-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 2.2rem;
+      background: var(--accent-light);
+      border-color: transparent;
+    }
+
+    .project-card.featured:hover { border-color: var(--accent); }
+
+    .project-meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    .project-card.featured .project-title { font-size: 1.7rem; }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .project-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+      background: var(--tag-bg);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+    }
+
+    .project-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .project-link:hover { border-color: var(--accent); }
+
+    .project-card.featured .project-body {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .project-card.featured .project-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4.5rem;
+      opacity: 0.35;
+    }
+
+    /* ─── STACK ─── */
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .stack-group {
+      padding: 1.5rem;
+      border: 1px solid var(--rule);
+      margin: -1px 0 0 -1px;
+    }
+
+    .stack-group-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .stack-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .stack-item {
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .contact-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .contact-row:hover { color: var(--accent); }
+
+    .contact-row-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+      min-width: 60px;
+      text-transform: uppercase;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 2rem 0;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 680px) {
+      .about-grid,
+      .projects-grid,
+      .contact-inner,
+      .stack-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-template-columns: 1fr; }
+      .project-card.featured .project-visual { display: none; }
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
-      <div class="brand-group">
-        <img src="assets/img/DALLE_portrait.png" alt="Rodrigo Aragao" class="profile-pic" />
-        <div>
-          <h1 class="site-title">Rodrigo Aragao</h1>
-          <p class="tagline">Data Science & ML · Software Engineering · Neurotechnology</p>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <span class="nav-name">rodrigo aragao</span>
+    <ul class="nav-links">
+      <li><a href="#about">about</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#stack">stack</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Computer Engineer · Neurotechnology · ML</p>
+      <div class="hero-name-row">
+        <h1 class="hero-name">Rodrigo<br><em>Aragao</em></h1>
+        <img src="assets/img/DALLE_portrait.png" alt="Rodrigo Aragao" class="hero-portrait" />
+      </div>
+      <p class="hero-desc">
+        I build systems that talk to the brain — merging hardware, signal processing,
+        and machine learning to push the limits of what human-computer interfaces can do.
+      </p>
+      <div class="hero-cta">
+        <a href="assets/docs/Rodrigo_Aragao_Resume.pdf" class="btn btn-primary">↓ résumé</a>
+        <a href="mailto:rodrigo01.aragao@gmail.com" class="btn btn-ghost">get in touch</a>
+        <a href="https://github.com/rod31" class="btn btn-ghost">github</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">about</p>
+    <div class="about-grid">
+      <div class="reveal">
+        <h2 class="about-headline">Your brain is<br><em>electrical</em>.<br>So is my code.</h2>
+        <p class="about-text">
+          Computer engineer with a minor in neuroscience, based in Philadelphia.
+          I design real-world tools that interface with the nervous system — from
+          custom hardware rigs to trained ML models that listen to brainwaves.
+        </p>
+        <p class="about-text">
+          Open to full-time roles in BCIs, AI/ML for cognitive health, and neurotech
+          startups pushing the frontier. U.S. permanent resident — open to relocation or remote.
+        </p>
+        <div class="badges">
+          <span class="badge">brain-computer interfaces</span>
+          <span class="badge">EEG signal processing</span>
+          <span class="badge">ML / transformers</span>
+          <span class="badge">full-stack neurotech</span>
+          <span class="badge">philadelphia, pa</span>
         </div>
       </div>
-      <button id="theme-toggle" aria-label="Toggle Dark Mode">🌃</button>
-    </div>
-  </header>
-  <main class="container">
-    <h2>About Me</h2>
-    <p><strong>💥 Your brain is electrical. So is my code.</strong></p>
-    <p>I’m Rodrigo Aragao — a computer engineer with a minor in neuroscience, and I build systems that talk to the brain.</p>
-    <p>I merge code, cognition, and creativity to design real-world tools that interface with the nervous system.</p>
-    <ul>
-      <li>🧪 Built a 96-well <strong>optogenetic stimulator</strong> for neuro research</li>
-      <li>🧠 Trained ML models on <strong>EEG signals</strong> to predict reaction time</li>
-      <li>🎭 Created an <strong>AI-powered</strong> Succession character chatbot that explores how <strong>language</strong> encodes personality</li>
-    </ul>
-    <p><strong>My edge? I build full-stack neurotech:</strong></p>
-    <ul>
-      <li>🔧 Hardware → Arduino, Raspberry Pi, sensor systems</li>
-      <li>📊 Signal Processing → Python, EEGLAB, cognitive bands</li>
-      <li>🧠 Machine Learning → SVM, Transformers, Embeddings</li>
-      <li>🖛 Interfaces → Streamlit, Tkinter, Power BI</li>
-    </ul>
-    <blockquote>I’m not here to wait for the future of brain-tech. <br><strong>I’m here to build it.</strong></blockquote>
-    <p>🌟 <strong>Open to full-time roles in:</strong></p>
-    <ul>
-      <li>Brain-Computer Interfaces (BCI)</li>
-      <li>AI/ML for cognitive health</li>
-      <li>Neurotech startups, labs & tools pushing limits</li>
-    </ul>
-    <p>📍 Philadelphia-based | Open to relocation or remote | U.S. Permanent Resident</p>
-    <p>🔗 <a href="mailto:rodrigo01.aragao@gmail.com">Let’s connect</a> • <a href="https://github.com/rod31" target="_blank">GitHub</a> • <a href="https://linkedin.com/in/rb-aragao" target="_blank">LinkedIn</a></p>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="projects">
-    <div class="project-card">
-      <h3>Succession Chatbot</h3>
-      <p>Interactive Streamlit app that lets you chat with Roman, Shiv, Kendall, or Logan Roy. I extracted dialogue, built a FAISS index over SentenceTransformer embeddings, and fine-tuned GPT to emulate each character’s tone.</p>
-      <a href="https://github.com/rod31/succession-chatbot" target="_blank">View on GitHub →</a>
-      <a href="https://succession-chatbot.streamlit.app" target="_blank" style="margin-left:1rem;">Live Demo →</a>
-    </div>
-    <div class="project-card">
-      <h3>Optogenetics Protocol GUI</h3>
-      <p>Python GUI & Arduino system for designing and triggering multi-well LED protocols in real time for neuroscience research, complete with metadata logging.</p>
-      <a href="https://github.com/rod31/optogenetics-gui" target="_blank">View on GitHub →</a>
-    </div>
-    <div class="project-card">
-      <h3>EEG Reaction Time Prediction</h3>
-      <p>SVM model built on MATLAB & Python to classify fast vs. slow reaction times using alpha/theta EEG features. Automated the ML pipeline with cross-validation and performance visualizations.</p>
-      <a href="https://github.com/rod31/eeg-reaction-time" target="_blank">View on GitHub →</a>
-    </div>
-    <div class="project-card">
-      <h3>IMDB Sentiment Classifier</h3>
-      <p>Benchmark of classical ML models and transformer architectures on the IMDB dataset for sentiment analysis, including cross-validation metrics and comparisons.</p>
-      <a href="https://github.com/rod31/imdb-sentiment-analysis" target="_blank">View on GitHub →</a>
+      <div class="about-highlights reveal">
+        <div class="highlight-item">
+          <div class="highlight-icon">🧪</div>
+          <p class="highlight-text">Built a 96-well <strong>optogenetic stimulator</strong> for real-time neuro research with Arduino and Python.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🧠</div>
+          <p class="highlight-text">Trained ML models on <strong>EEG signals</strong> to predict reaction time using alpha/theta cognitive bands.</p>
+        </div>
+        <div class="highlight-item">
+          <div class="highlight-icon">🎭</div>
+          <p class="highlight-text">Created an <strong>AI-powered chatbot</strong> using RAG and SentenceTransformer embeddings to emulate Succession characters.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
-  <h2>Technologies</h2>
-  <ul class="skills-list">
-    <li>Python</li>
-    <li>PySpark & Azure Databricks</li>
-    <li>Streamlit & FAISS</li>
-    <li>Transformers & Hugging Face</li>
-    <li>Power BI & Azure Synapse</li>
-    <li>Arduino & IoT</li>
-  </ul>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">projects</p>
+    <div class="projects-grid">
+
+      <!-- Featured -->
+      <div class="project-card featured reveal">
+        <div class="project-visual">🎭</div>
+        <div class="project-body">
+          <p class="project-meta">featured · NLP · RAG</p>
+          <h3 class="project-title">Succession Chatbot</h3>
+          <p class="project-desc">
+            Chat with Roman, Shiv, Kendall, or Logan Roy. I extracted dialogue from all episodes,
+            built a FAISS index over SentenceTransformer embeddings, and fine-tuned GPT
+            to emulate each character's distinct voice and tone.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">GPT</span>
+            <span class="project-tag">FAISS</span>
+            <span class="project-tag">SentenceTransformers</span>
+            <span class="project-tag">Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/rod31/succession-chatbot" class="project-link">→ github</a>
+            <a href="https://succession-chatbot.streamlit.app" class="project-link">→ live demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="project-card reveal">
+        <p class="project-meta">hardware · neurotech</p>
+        <h3 class="project-title">Optogenetics Protocol GUI</h3>
+        <p class="project-desc">Python GUI & Arduino system for designing and triggering multi-well LED protocols in real time, with metadata logging for neuro research.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Tkinter</span>
+          <span class="project-tag">Arduino</span>
+          <span class="project-tag">IoT</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rod31/optogenetics-gui" class="project-link">→ github</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-card reveal">
+        <p class="project-meta">signal processing · ML</p>
+        <h3 class="project-title">EEG Reaction Time Predictor</h3>
+        <p class="project-desc">SVM model built on MATLAB & Python to classify fast vs. slow reaction times using alpha/theta EEG features with full cross-validation pipeline.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">MATLAB</span>
+          <span class="project-tag">EEGLAB</span>
+          <span class="project-tag">SVM</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rod31/eeg-reaction-time" class="project-link">→ github</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="project-card reveal">
+        <p class="project-meta">NLP · benchmarking</p>
+        <h3 class="project-title">IMDB Sentiment Classifier</h3>
+        <p class="project-desc">Benchmark of classical ML models vs transformer architectures on IMDB sentiment analysis, with cross-validation metrics and comparative analysis.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Transformers</span>
+          <span class="project-tag">Hugging Face</span>
+          <span class="project-tag">scikit-learn</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/rod31/imdb-sentiment-analysis" class="project-link">→ github</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:rodrigo01.aragao@gmail.com">rodrigo01.aragao@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/rb-aragao" target="_blank">rb-aragao</a></p>
-  <p>GitHub: <a href="https://github.com/rod31" target="_blank">rod31</a></p>
-  <a href="assets/docs/Rodrigo_Aragao_Resume.pdf" download class="btn-resume">
-  📄 Download Résumé
-</a>
-</section>  
-    </main>
-    <footer>
-    <p>&copy; 2025 Rodrigo Aragao</p>
-  </footer>
+<!-- STACK -->
+<section id="stack">
+  <div class="container">
+    <p class="section-label">stack</p>
+    <div class="stack-grid reveal">
+      <div class="stack-group">
+        <p class="stack-group-label">Languages & Core</p>
+        <div class="stack-items">
+          <span class="stack-item">Python</span>
+          <span class="stack-item">MATLAB</span>
+          <span class="stack-item">SQL</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <p class="stack-group-label">ML & Data</p>
+        <div class="stack-items">
+          <span class="stack-item">Transformers / Hugging Face</span>
+          <span class="stack-item">SVM, Embeddings, FAISS</span>
+          <span class="stack-item">PySpark & Azure Databricks</span>
+          <span class="stack-item">Power BI & Azure Synapse</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <p class="stack-group-label">Neurotech</p>
+        <div class="stack-items">
+          <span class="stack-item">EEGLAB</span>
+          <span class="stack-item">EEG Signal Processing</span>
+          <span class="stack-item">Arduino & Raspberry Pi</span>
+          <span class="stack-item">Sensor Systems / IoT</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <p class="stack-group-label">Interfaces</p>
+        <div class="stack-items">
+          <span class="stack-item">Streamlit</span>
+          <span class="stack-item">Tkinter</span>
+          <span class="stack-item">Power BI</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <p class="stack-group-label">Cloud & Infra</p>
+        <div class="stack-items">
+          <span class="stack-item">Azure Databricks</span>
+          <span class="stack-item">Azure Synapse</span>
+          <span class="stack-item">GitHub Pages</span>
+        </div>
+      </div>
+      <div class="stack-group">
+        <p class="stack-group-label">Focus Areas</p>
+        <div class="stack-items">
+          <span class="stack-item">Brain-Computer Interfaces</span>
+          <span class="stack-item">Cognitive ML</span>
+          <span class="stack-item">NLP & LLMs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script>
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-    });
-  </script>
-</body>
-</html>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">contact</p>
+    <div class="contact-inner">
+      <div class="reveal">
+        <h2 class="contact-headline">Let's build<br>something<br>new.</h2>
+        <p class="contact-sub">
+          I'm actively looking for full-time roles in BCIs, neurotech, and cognitive AI.
+          If you're working on something at the edge of neuroscience and engineering — let's talk.
+        </p>
+        <a href="/cdn-cgi/l/email-protection#1b69747f69727c742b2a357a697a7c7a745b7c767a727735787476" class="btn btn-primary">send a message</a>
+      </div>
+      <div class="contact-links reveal">
+        <a href="/cdn-cgi/l/email-protection#1b69747f69727c742b2a357a697a7c7a745b7c767a727735787476" class="contact-row">
+          <span class="contact-row-label">email</span>
+          <span class="__cf_email__" data-cfemail="2e5c414a5c4749411e1f004f5c4f494f416e49434f4742004d4143">[email&#160;protected]</span>
+        </a>
+        <a href="https://linkedin.com/in/rb-aragao" class="contact-row">
+          <span class="contact-row-label">linkedin</span>
+          /in/rb-aragao
+        </a>
+        <a href="https://github.com/rod31" class="contact-row">
+          <span class="contact-row-label">github</span>
+          /rod31
+        </a>
+        <a href="assets/docs/Rodrigo_Aragao_Resume.pdf" class="contact-row">
+          <span class="contact-row-label">résumé</span>
+          download pdf
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <span class="footer-copy">© 2025 Rodrigo Aragao</span>
+    <span class="footer-copy">Philadelphia, PA · Open to relocation</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  c
