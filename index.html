@@ -465,6 +465,71 @@
       text-transform: uppercase;
     }
 
+    /* ─── EXPERIENCE ─── */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .exp-item:last-child { border-bottom: none; }
+
+    .exp-company {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.67rem;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      color: var(--mid);
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.875rem;
+      color: var(--mid);
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--rule);
+    }
+
+    @media (max-width: 680px) {
+      .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+    }
+
     /* ─── FOOTER ─── */
     footer {
       padding: 2rem 0;
@@ -519,6 +584,7 @@
     <span class="nav-name">rodrigo aragao</span>
     <ul class="nav-links">
       <li><a href="#about">about</a></li>
+      <li><a href="#experience">experience</a></li>
       <li><a href="#projects">projects</a></li>
       <li><a href="#stack">stack</a></li>
       <li><a href="#contact">contact</a></li>
@@ -536,12 +602,11 @@
         <img src="assets/img/DALLE_portrait.png" alt="Rodrigo Aragao" class="hero-portrait" />
       </div>
       <p class="hero-desc">
-        I build intelligent systems — from vibe-matching recommendation engines to
-        brain-computer interfaces. AI engineer by day, builder by night, with a background
-        in neuroscience that gives me an unusual angle on how minds and machines connect.
+        I build intelligent systems — recommendation engines, RAG pipelines, and AI tools
+        that work in production. AI engineer by day, builder by night.
       </p>
       <div class="hero-cta">
-        <a href="assets/docs/Rodrigo_Aragao_Resume.pdf" class="btn btn-primary">↓ résumé</a>
+        <a href="resume.pdf" class="btn btn-primary">↓ résumé</a>
         <a href="mailto:rodrigo01.aragao@gmail.com" class="btn btn-ghost">get in touch</a>
         <a href="https://github.com/rod31" class="btn btn-ghost">github</a>
       </div>
@@ -568,8 +633,8 @@
         <div class="badges">
           <span class="badge">AI engineering</span>
           <span class="badge">LLMs & embeddings</span>
+          <span class="badge">RAG pipelines</span>
           <span class="badge">rec systems</span>
-          <span class="badge">neurotech</span>
           <span class="badge">philadelphia, pa</span>
         </div>
       </div>
@@ -579,14 +644,109 @@
           <p class="highlight-text">Built <strong>Litema</strong> — a cross-media taste engine using AI vibe embeddings and pgvector similarity search across movies, TV, and books.</p>
         </div>
         <div class="highlight-item">
-          <div class="highlight-icon">🧠</div>
-          <p class="highlight-text">Trained ML models on <strong>EEG signals</strong> to predict reaction time using alpha/theta cognitive bands — bridging neuroscience and ML.</p>
+          <div class="highlight-icon">⚙️</div>
+          <p class="highlight-text">Shipped a production <strong>RAG copilot</strong> at a GovTech startup — end-to-end pipeline from ingestion to answer generation, cutting retrieval latency ~40%.</p>
         </div>
         <div class="highlight-item">
-          <div class="highlight-icon">🎭</div>
-          <p class="highlight-text">Built a <strong>RAG chatbot</strong> using SentenceTransformer embeddings and FAISS to emulate Succession characters with distinct voice and tone.</p>
+          <div class="highlight-icon">🔌</div>
+          <p class="highlight-text">Building an <strong>MCP server</strong> in Python to let LLMs query live enterprise data — goals, budgets, and project status — via natural language.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <p class="section-label">experience</p>
+    <div class="experience-list">
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <p class="exp-company">Facilit Tecnologia</p>
+          <p class="exp-role">junior ai engineer</p>
+          <p class="exp-date">Nov 2025 – Present</p>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Built end-to-end RAG pipeline (chunking, embeddings, vector search, answer generation) powering an internal AI copilot that lets employees query contracts, dashboards, and client data in seconds.</li>
+            <li>Engineered a FastAPI AI Support Assistant deployed via Docker and Coolify; optimized batch ingestion to cut retrieval latency ~40%.</li>
+            <li>Developing an MCP server in Python to enable natural language queries over organizational goals, budgets, and project status for government clients.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">FastAPI</span>
+            <span class="project-tag">RAG</span>
+            <span class="project-tag">n8n</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">MCP</span>
+            <span class="project-tag">Pinecone</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <p class="exp-company">GS1 US</p>
+          <p class="exp-role">data analytics engineer co-op</p>
+          <p class="exp-date">Apr – Sep 2024</p>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Designed ETL pipelines in Python and SQL to clean and transform million-row global trade datasets.</li>
+            <li>Built PySpark notebooks in Azure Databricks for barcode prefix analysis; optimized workflows to cut pipeline runtime ~35%.</li>
+            <li>Delivered Power BI dashboards adopted by analytics and product teams.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">PySpark</span>
+            <span class="project-tag">Azure Databricks</span>
+            <span class="project-tag">SQL</span>
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">ETL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <p class="exp-company">Drexel CogNew Lab</p>
+          <p class="exp-role">undergraduate researcher</p>
+          <p class="exp-date">Sep 2023 – Apr 2024</p>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Built automated MATLAB pipeline for multi-subject EEG preprocessing and feature extraction across 20+ datasets.</li>
+            <li>Trained and tuned SVM in Python to predict cognitive reaction times, improving accuracy from 50% to 63% via grid search and k-fold cross-validation.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">MATLAB</span>
+            <span class="project-tag">SVM</span>
+            <span class="project-tag">scikit-learn</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <p class="exp-company">Fulton Bank</p>
+          <p class="exp-role">data science co-op</p>
+          <p class="exp-date">Apr – Sep 2023</p>
+        </div>
+        <div class="exp-body">
+          <ul class="exp-bullets">
+            <li>Built Python scripts for data quality profiling (completeness, uniqueness, consistency) across Lending & Risk datasets.</li>
+            <li>Developed Power BI dashboards including Delinquency and Risk Rating reports for business stakeholders.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Power BI</span>
+            <span class="project-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -701,11 +861,20 @@
         </div>
       </div>
       <div class="stack-group">
+        <p class="stack-group-label">Infra & Deployment</p>
+        <div class="stack-items">
+          <span class="stack-item">FastAPI</span>
+          <span class="stack-item">Docker & Coolify</span>
+          <span class="stack-item">n8n (AI workflows)</span>
+          <span class="stack-item">MCP servers</span>
+        </div>
+      </div>
+      <div class="stack-group">
         <p class="stack-group-label">Data & Cloud</p>
         <div class="stack-items">
           <span class="stack-item">PySpark & Azure Databricks</span>
-          <span class="stack-item">Azure Synapse</span>
           <span class="stack-item">Supabase & pgvector</span>
+          <span class="stack-item">Pinecone</span>
           <span class="stack-item">Power BI</span>
         </div>
       </div>
@@ -714,15 +883,6 @@
         <div class="stack-items">
           <span class="stack-item">React Native / Expo</span>
           <span class="stack-item">Streamlit</span>
-          <span class="stack-item">Tkinter</span>
-        </div>
-      </div>
-      <div class="stack-group">
-        <p class="stack-group-label">Neurotech</p>
-        <div class="stack-items">
-          <span class="stack-item">EEG Signal Processing</span>
-          <span class="stack-item">EEGLAB</span>
-          <span class="stack-item">Arduino & Raspberry Pi</span>
         </div>
       </div>
       <div class="stack-group">
@@ -731,7 +891,7 @@
           <span class="stack-item">AI Engineering</span>
           <span class="stack-item">Recommendation Systems</span>
           <span class="stack-item">NLP & LLMs</span>
-          <span class="stack-item">Brain-Computer Interfaces</span>
+          <span class="stack-item">Data Engineering</span>
         </div>
       </div>
     </div>
@@ -765,7 +925,7 @@
           <span class="contact-row-label">github</span>
           /rod31
         </a>
-        <a href="assets/docs/Rodrigo_Aragao_Resume.pdf" class="contact-row">
+        <a href="resume.pdf" class="contact-row">
           <span class="contact-row-label">résumé</span>
           download pdf
         </a>
