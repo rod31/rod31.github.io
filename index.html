@@ -107,8 +107,8 @@
     }
 
     .hero-portrait {
-      width: 76px;
-      height: 76px;
+      width: 96px;
+      height: 96px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid var(--rule);
@@ -530,14 +530,15 @@
 <div class="hero">
   <div class="container">
     <div class="hero-inner">
-      <p class="hero-eyebrow">Computer Engineer · Neurotechnology · ML</p>
+      <p class="hero-eyebrow">AI Engineer · LLMs & Rec Systems · Neurotech</p>
       <div class="hero-name-row">
         <h1 class="hero-name">Rodrigo<br><em>Aragao</em></h1>
         <img src="assets/img/DALLE_portrait.png" alt="Rodrigo Aragao" class="hero-portrait" />
       </div>
       <p class="hero-desc">
-        I build systems that talk to the brain — merging hardware, signal processing,
-        and machine learning to push the limits of what human-computer interfaces can do.
+        I build intelligent systems — from vibe-matching recommendation engines to
+        brain-computer interfaces. AI engineer by day, builder by night, with a background
+        in neuroscience that gives me an unusual angle on how minds and machines connect.
       </p>
       <div class="hero-cta">
         <a href="assets/docs/Rodrigo_Aragao_Resume.pdf" class="btn btn-primary">↓ résumé</a>
@@ -554,36 +555,36 @@
     <p class="section-label">about</p>
     <div class="about-grid">
       <div class="reveal">
-        <h2 class="about-headline">Your brain is<br><em>electrical</em>.<br>So is my code.</h2>
+        <h2 class="about-headline">I build AI that<br><em>understands</em><br>context.</h2>
         <p class="about-text">
-          Computer engineer with a minor in neuroscience, based in Philadelphia.
-          I design real-world tools that interface with the nervous system — from
-          custom hardware rigs to trained ML models that listen to brainwaves.
+          AI engineer with a background in computer engineering and neuroscience, based in Philadelphia.
+          Currently building production ML systems at a startup — and shipping side projects
+          that push what recommendation engines, LLMs, and embeddings can do.
         </p>
         <p class="about-text">
-          Open to full-time roles in BCIs, AI/ML for cognitive health, and neurotech
-          startups pushing the frontier. U.S. permanent resident — open to relocation or remote.
+          Open to AI engineering and data science roles where I can build things that matter.
+          U.S. permanent resident — open to relocation or remote.
         </p>
         <div class="badges">
-          <span class="badge">brain-computer interfaces</span>
-          <span class="badge">EEG signal processing</span>
-          <span class="badge">ML / transformers</span>
-          <span class="badge">full-stack neurotech</span>
+          <span class="badge">AI engineering</span>
+          <span class="badge">LLMs & embeddings</span>
+          <span class="badge">rec systems</span>
+          <span class="badge">neurotech</span>
           <span class="badge">philadelphia, pa</span>
         </div>
       </div>
       <div class="about-highlights reveal">
         <div class="highlight-item">
-          <div class="highlight-icon">🧪</div>
-          <p class="highlight-text">Built a 96-well <strong>optogenetic stimulator</strong> for real-time neuro research with Arduino and Python.</p>
+          <div class="highlight-icon">🎯</div>
+          <p class="highlight-text">Built <strong>Litema</strong> — a cross-media taste engine using AI vibe embeddings and pgvector similarity search across movies, TV, and books.</p>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">🧠</div>
-          <p class="highlight-text">Trained ML models on <strong>EEG signals</strong> to predict reaction time using alpha/theta cognitive bands.</p>
+          <p class="highlight-text">Trained ML models on <strong>EEG signals</strong> to predict reaction time using alpha/theta cognitive bands — bridging neuroscience and ML.</p>
         </div>
         <div class="highlight-item">
           <div class="highlight-icon">🎭</div>
-          <p class="highlight-text">Created an <strong>AI-powered chatbot</strong> using RAG and SentenceTransformer embeddings to emulate Succession characters.</p>
+          <p class="highlight-text">Built a <strong>RAG chatbot</strong> using SentenceTransformer embeddings and FAISS to emulate Succession characters with distinct voice and tone.</p>
         </div>
       </div>
     </div>
@@ -598,42 +599,45 @@
 
       <!-- Featured -->
       <div class="project-card featured reveal">
-        <div class="project-visual">🎭</div>
+        <div class="project-visual">🎯</div>
         <div class="project-body">
-          <p class="project-meta">featured · NLP · RAG</p>
-          <h3 class="project-title">Succession Chatbot</h3>
+          <p class="project-meta">featured · rec systems · embeddings</p>
+          <h3 class="project-title">Litema</h3>
           <p class="project-desc">
-            Chat with Roman, Shiv, Kendall, or Logan Roy. I extracted dialogue from all episodes,
-            built a FAISS index over SentenceTransformer embeddings, and fine-tuned GPT
-            to emulate each character's distinct voice and tone.
+            A personal taste engine that recommends movies, TV, and books in one unified space —
+            based on vibe, not genre. AI generates structured attributes (mood, tone, pace, themes)
+            for each title; pgvector similarity search finds what matches your soul, not your watch history.
+            Built with a Python backend and a React Native mobile app.
           </p>
           <div class="project-tags">
             <span class="project-tag">Python</span>
-            <span class="project-tag">GPT</span>
-            <span class="project-tag">FAISS</span>
-            <span class="project-tag">SentenceTransformers</span>
-            <span class="project-tag">Streamlit</span>
+            <span class="project-tag">Embeddings</span>
+            <span class="project-tag">pgvector</span>
+            <span class="project-tag">Supabase</span>
+            <span class="project-tag">React Native</span>
+            <span class="project-tag">TMDB API</span>
           </div>
           <div class="project-links">
-            <a href="https://github.com/rod31/succession-chatbot" class="project-link">→ github</a>
-            <a href="https://succession-chatbot.streamlit.app" class="project-link">→ live demo</a>
+            <a href="https://github.com/rod31/litema" class="project-link">→ github</a>
           </div>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="project-card reveal">
-        <p class="project-meta">hardware · neurotech</p>
-        <h3 class="project-title">Optogenetics Protocol GUI</h3>
-        <p class="project-desc">Python GUI & Arduino system for designing and triggering multi-well LED protocols in real time, with metadata logging for neuro research.</p>
+        <p class="project-meta">NLP · RAG</p>
+        <h3 class="project-title">Succession Chatbot</h3>
+        <p class="project-desc">Chat with Roman, Shiv, Kendall, or Logan Roy. Extracted dialogue from all episodes, built a FAISS index over SentenceTransformer embeddings, and prompted GPT to emulate each character's voice.</p>
         <div class="project-tags">
           <span class="project-tag">Python</span>
-          <span class="project-tag">Tkinter</span>
-          <span class="project-tag">Arduino</span>
-          <span class="project-tag">IoT</span>
+          <span class="project-tag">GPT</span>
+          <span class="project-tag">FAISS</span>
+          <span class="project-tag">SentenceTransformers</span>
+          <span class="project-tag">Streamlit</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/rod31/optogenetics-gui" class="project-link">→ github</a>
+          <a href="https://github.com/rod31/succession-chatbot" class="project-link">→ github</a>
+          <a href="https://succession-chatbot.streamlit.app" class="project-link">→ live demo</a>
         </div>
       </div>
 
@@ -682,50 +686,52 @@
         <p class="stack-group-label">Languages & Core</p>
         <div class="stack-items">
           <span class="stack-item">Python</span>
-          <span class="stack-item">MATLAB</span>
+          <span class="stack-item">TypeScript</span>
           <span class="stack-item">SQL</span>
+          <span class="stack-item">MATLAB</span>
         </div>
       </div>
       <div class="stack-group">
-        <p class="stack-group-label">ML & Data</p>
+        <p class="stack-group-label">AI & ML</p>
         <div class="stack-items">
+          <span class="stack-item">LLMs & Prompt Engineering</span>
+          <span class="stack-item">Embeddings & Vector Search</span>
           <span class="stack-item">Transformers / Hugging Face</span>
-          <span class="stack-item">SVM, Embeddings, FAISS</span>
-          <span class="stack-item">PySpark & Azure Databricks</span>
-          <span class="stack-item">Power BI & Azure Synapse</span>
+          <span class="stack-item">RAG Pipelines</span>
         </div>
       </div>
       <div class="stack-group">
-        <p class="stack-group-label">Neurotech</p>
+        <p class="stack-group-label">Data & Cloud</p>
         <div class="stack-items">
-          <span class="stack-item">EEGLAB</span>
-          <span class="stack-item">EEG Signal Processing</span>
-          <span class="stack-item">Arduino & Raspberry Pi</span>
-          <span class="stack-item">Sensor Systems / IoT</span>
+          <span class="stack-item">PySpark & Azure Databricks</span>
+          <span class="stack-item">Azure Synapse</span>
+          <span class="stack-item">Supabase & pgvector</span>
+          <span class="stack-item">Power BI</span>
         </div>
       </div>
       <div class="stack-group">
         <p class="stack-group-label">Interfaces</p>
         <div class="stack-items">
+          <span class="stack-item">React Native / Expo</span>
           <span class="stack-item">Streamlit</span>
           <span class="stack-item">Tkinter</span>
-          <span class="stack-item">Power BI</span>
         </div>
       </div>
       <div class="stack-group">
-        <p class="stack-group-label">Cloud & Infra</p>
+        <p class="stack-group-label">Neurotech</p>
         <div class="stack-items">
-          <span class="stack-item">Azure Databricks</span>
-          <span class="stack-item">Azure Synapse</span>
-          <span class="stack-item">GitHub Pages</span>
+          <span class="stack-item">EEG Signal Processing</span>
+          <span class="stack-item">EEGLAB</span>
+          <span class="stack-item">Arduino & Raspberry Pi</span>
         </div>
       </div>
       <div class="stack-group">
         <p class="stack-group-label">Focus Areas</p>
         <div class="stack-items">
-          <span class="stack-item">Brain-Computer Interfaces</span>
-          <span class="stack-item">Cognitive ML</span>
+          <span class="stack-item">AI Engineering</span>
+          <span class="stack-item">Recommendation Systems</span>
           <span class="stack-item">NLP & LLMs</span>
+          <span class="stack-item">Brain-Computer Interfaces</span>
         </div>
       </div>
     </div>
@@ -740,8 +746,9 @@
       <div class="reveal">
         <h2 class="contact-headline">Let's build<br>something<br>new.</h2>
         <p class="contact-sub">
-          I'm actively looking for full-time roles in BCIs, neurotech, and cognitive AI.
-          If you're working on something at the edge of neuroscience and engineering — let's talk.
+          I'm actively looking for AI engineering and data science roles where I can build
+          things that matter. If you're working on LLMs, rec systems, or anything at the
+          intersection of AI and the real world — let's talk.
         </p>
         <a href="mailto:rodrigo01.aragao@gmail.com" class="btn btn-primary">send a message</a>
       </div>
