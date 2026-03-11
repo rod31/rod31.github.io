@@ -743,12 +743,12 @@
           I'm actively looking for full-time roles in BCIs, neurotech, and cognitive AI.
           If you're working on something at the edge of neuroscience and engineering — let's talk.
         </p>
-        <a href="/cdn-cgi/l/email-protection#1b69747f69727c742b2a357a697a7c7a745b7c767a727735787476" class="btn btn-primary">send a message</a>
+        <a href="mailto:rodrigo01.aragao@gmail.com" class="btn btn-primary">send a message</a>
       </div>
       <div class="contact-links reveal">
-        <a href="/cdn-cgi/l/email-protection#1b69747f69727c742b2a357a697a7c7a745b7c767a727735787476" class="contact-row">
+        <a href="mailto:rodrigo01.aragao@gmail.com" class="contact-row">
           <span class="contact-row-label">email</span>
-          <span class="__cf_email__" data-cfemail="2e5c414a5c4749411e1f004f5c4f494f416e49434f4742004d4143">[email&#160;protected]</span>
+          rodrigo01.aragao@gmail.com
         </a>
         <a href="https://linkedin.com/in/rb-aragao" class="contact-row">
           <span class="contact-row-label">linkedin</span>
@@ -775,7 +775,13 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  c
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
