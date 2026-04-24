@@ -765,20 +765,24 @@
           <p class="project-meta">featured · rec systems · embeddings</p>
           <h3 class="project-title">Litema</h3>
           <p class="project-desc">
-            A personal taste engine that recommends movies, TV, and books in one unified space —
-            based on vibe, not genre. AI generates structured attributes (mood, tone, pace, themes)
-            for each title; pgvector similarity search finds what matches your soul, not your watch history.
-            Built with a Python backend and a React Native mobile app.
+            Cross-media recommender for movies, TV, and books that learns taste by <em>vibe</em> —
+            mood, tone, pace, themes — not genre. Dual 1536-dim embeddings (vibe + plot) over pgvector
+            ANN search, blended with Bayesian-smoothed ratings so obscure gems can surface alongside
+            classics. Rating-weighted k-means on each user's library generates a personalized "For You"
+            feed; batch GPT extraction via OpenAI's Batch API keeps ingestion cheap across 8,500+ titles.
+            Python backend, React Native app, live at litema.app.
           </p>
           <div class="project-tags">
             <span class="project-tag">Python</span>
-            <span class="project-tag">Embeddings</span>
             <span class="project-tag">pgvector</span>
+            <span class="project-tag">OpenAI Batch API</span>
             <span class="project-tag">Supabase</span>
+            <span class="project-tag">k-means</span>
             <span class="project-tag">React Native</span>
             <span class="project-tag">TMDB API</span>
           </div>
           <div class="project-links">
+            <a href="https://litema.app" class="project-link">→ litema.app</a>
             <a href="https://github.com/rod31/litema" class="project-link">→ github</a>
           </div>
         </div>
